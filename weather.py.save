@@ -1,5 +1,0 @@
-from flask import Flask,ren
-
-from urllib import request
-
-import json,config
