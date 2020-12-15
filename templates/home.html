@@ -1,0 +1,10 @@
+<html>
+	<head>
+		<title>Weather Application</title>
+	</head>
+	<body>
+		{%for key in data.keys() %}
+			<p>{{ key }} : {{ data[key] }}</p>
+		{% endfor %}
+	</body>
+</html>
