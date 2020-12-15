@@ -1,14 +1,13 @@
-
 from flask  import Flask,render_template
-from urllib import request
 
 from config import URL,CITY,API_KEY
 
 import json
+import requests
 
-def getData():
-	source= request.urlopen(URL.format(CITY=CITY,API_KEY=API_KEY)).read()
-	data  = json.loads(source)
+def getData(SELECTED_CITY=CITY):
+	resp  = requests.get(URL.format(CITY=SELECTED_CITY,API_KEY=API_KEY))
+	data  = resp.json()
 	data  = {
 			'city'       :str(data['name']),
 			'longitude'  :str(abs(data['coord']['lon'])) + ('° E ' if (data['coord']['lon']>=0) else '° W '),
@@ -25,5 +24,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-	data=getData()
+        data=getData()
+        return render_template('home.html',data=data)
+
+@app.route('/<city>')
+def homeCity(city):
+	data=getData(city)
 	return render_template('home.html',data=data)
+
+@app.route('/settings/')
+def settings():
+	return render_template('settings.html')

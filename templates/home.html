@@ -3,8 +3,12 @@
 		<title>Weather Application</title>
 	</head>
 	<body>
-		{%for key in data.keys() %}
-			<p>{{ key }} : {{ data[key] }}</p>
-		{% endfor %}
+		<div style="text-align:center;">
+			<h2>Weather Report</h2>
+			{%for key in data.keys() %}
+				<p>{{ key }} : {{ data[key] }}</p>
+			{% endfor %}
+			<a href="/settings">Settings</a>
+		</div>
 	</body>
 </html>
