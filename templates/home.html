@@ -1,14 +1,50 @@
 <html>
+	<style>
+		.center_box{
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			position: absolute;
+			text-align: center;
+			width: fit-content;
+			height: fit-content;
+		}
+		.card{
+			border-style: solid;
+			border-color: blue;
+			border-radius: 1em;
+			padding: 5px;
+			margin: 5px;
+		}
+		.card_header{
+			font-size: 15px;
+			text-align: start;
+		}
+		.card_body{
+			font-size: 25px;
+			text-align: center;
+			margin: 0.25em 5em;
+		}
+	</style>
 	<head>
 		<title>Weather Application</title>
 	</head>
 	<body>
-		<div style="text-align:center;">
-			<h2>Weather Report</h2>
+		<div class='center_box'>
+			<h1>Weather Report</h1>
 			{%for key in data.keys() %}
-				<p>{{ key }} : {{ data[key] }}</p>
+				<div class='card'>
+					<div class='card_header'>
+						{{ key }}
+					</div>
+					<div class='card_body'>
+						{{ data[key] }}
+					</div>
+				</div>
 			{% endfor %}
-			<a href="/settings">Settings</a>
+			<a href='/settings'>Settings</a>
 		</div>
 	</body>
 </html>

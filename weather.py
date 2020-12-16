@@ -27,11 +27,7 @@ def home():
         data=getData()
         return render_template('home.html',data=data)
 
-@app.route('/<city>')
-def homeCity(city):
-	data=getData(city)
-	return render_template('home.html',data=data)
-
 @app.route('/settings/')
 def settings():
 	return render_template('settings.html')
+	
