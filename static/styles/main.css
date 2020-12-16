@@ -1,0 +1,32 @@
+body{
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.center_box{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    text-align: center;
+    width: max-content;
+    height: max-content;
+}
+.card{
+    border-style: solid;
+    border-color: blue;
+    border-radius: 1em;
+    padding: 5px;
+    margin: 5px;
+}
+.card_header{
+    font-size: 15px;
+    text-align: start;
+}
+.card_body{
+    font-size: 25px;
+    text-align: center;
+    margin: 0.25em 5em;
+}
