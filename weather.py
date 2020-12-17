@@ -1,4 +1,4 @@
-from flask  import Flask,render_template
+from flask  import Flask,render_template,request
 
 from config import URL,CITY,API_KEY
 
@@ -22,7 +22,11 @@ def getData(SELECTED_CITY=CITY):
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/',methods=['GET','POST'])
 def home():
-        data=getData()
-        return render_template('home.html',data=data)
+		data={}
+		if request.args.get('search'):
+			data=getData(request.args.get('search'))
+		else:
+			data=getData()
+		return render_template('home.html',data=data)
