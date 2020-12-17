@@ -5,9 +5,9 @@
 	</head>
 	<body>
 		<div class='center_box'>
-			<form>
+			<form autocomplete='off'>
 				<input class='search' type='text' placeholder='Search City' name='search' required>
-				<button type='submit'>Go</button>
+				<button type='submit' hidden></button>
 			</form>
 			<h1>Weather Report</h1>
 			{%for key in data.keys() %}

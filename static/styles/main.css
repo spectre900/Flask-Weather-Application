@@ -14,15 +14,14 @@ body{
     border-style: solid;
 }
 .center_box{
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 50%;
+    left: 50%;
     margin: auto;
     position: absolute;
     text-align: center;
     width: max-content;
     height: max-content;
+    transform: translate(-50%, -50%);
 }
 .card{
     border-style: solid;
