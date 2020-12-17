@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<link rel='shortcut icon' href="{{ url_for('static', filename='images/favicon.ico') }}">
 		<link rel='stylesheet' href="{{ url_for('static',filename='styles/main.css') }}">
 		<title>Weather Application</title>
 	</head>
@@ -9,17 +10,28 @@
 				<input class='search' type='text' placeholder='Search City' name='search' required>
 				<button type='submit' hidden></button>
 			</form>
-			<h1>Weather Report</h1>
-			{%for key in data.keys() %}
-				<div class='card'>
+			<div class='card'>
+				<h2>Location</h2>
+				{% for key in data[0].keys() %}
 					<div class='card_header'>
 						{{ key|capitalize }}
 					</div>
 					<div class='card_body'>
-						{{ data[key]|capitalize }}
+						{{ data[0][key] }}
 					</div>
-				</div>
-			{% endfor %}
+				{% endfor %}
+			</div>
+			<div class='card'>
+				<h2>Weather</h2>
+				{% for key in data[1].keys() %}
+					<div class='card_header'>
+						{{ key|capitalize }}
+					</div>
+					<div class='card_body'>
+						{{ data[1][key] }}
+					</div>
+				{% endfor %}
+			</div>
 		</div>
 	</body>
 </html>
