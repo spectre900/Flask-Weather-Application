@@ -7,4 +7,4 @@
 
 ## Sample Images
 
-<img src="https://github.com/spectre900/Flask-Weather-Application/screenshots/image1.png">
+<img src="https://github.com/spectre900/Flask-Weather-Application/blob/master/screenshots/image1.png">
